@@ -3,6 +3,6 @@
 permalink: /music-in.html
 
 ---
-#### 选择播放的音乐🎶
-![avatar](http://p1.music.126.net/QWMV-Ru_6149AKe0mCBXKg==/1420569024374784.jpg)
+#### 选择播放的音乐平台🎶
+![avatar](https://y.gtimg.cn/music/photo_new/T001R300x300M000000xVBxt1xgiyW.jpg?max_age=2592000)
 #### [选择](/music163.html)
