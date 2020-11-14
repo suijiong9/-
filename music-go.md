@@ -7,5 +7,5 @@ permalink: /music-in.html
 ![QQ音乐🎶](https://y.gtimg.cn/music/photo_new/T001R300x300M000000xVBxt1xgiyW.jpg?max_age=2592000)
 #### [选择](/qqmusic.html)
 
-![网易云音乐🎶](https://img.pconline.com.cn/images/upload/upc/tx/pcdlc/1901/21/c16/129298526_1548050355937.png)
+![网易云音乐🎶](https://tse1-mm.cn.bing.net/th/id/OIP.ndc1TIqHhuwtwLqEg7TR2QHaFh?pid=Api&dpr=1.94)
 #### [选择](/music163.html)
