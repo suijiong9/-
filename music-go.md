@@ -16,4 +16,4 @@ permalink: /music-in.html
 
 <div align=right><img src="https://note.youdao.com/yws/api/personal/file/WEB69c60d6bb103f646c40262f8cd4cfacd?method=download&shareKey=f388eda8c2b819be50fc9298fd6a8903&inline=true" width="45%" "></div>
 
-<font face="黑体" color=red size=3>当前音乐🎶是（嚣张 - en）</font>
+<font face="黑体" color=red size=3>当前音乐🎶是：「嚣张 - en」</font>
