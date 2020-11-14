@@ -1,6 +1,5 @@
-#### *视频 内容：
+#### *视频内容
 
-![V001]( https://i2.hdslb.com/bfs/archive/8d3fd5d6540dfea4cdde5c7893bcd8588a84b441.png@468w_292h_1c.png)
-
+![avatar](https://note.youdao.com/yws/api/personal/file/WEB9e7474f6ccedc8b178b1e4be7008dca7?method=download&shareKey=050dfd2a747cfe2b3568ebe8e3b38258&inline=true)
 
 [*观 看](/v001.html)
