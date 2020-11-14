@@ -13,4 +13,4 @@ permalink: /music-in.html
 ![酷狗音乐🎶](http://www.lgstatic.com/thumbnail_300x300/image1/M00/10/CD/Cgo8PFT_tOuASrGXAABorM2MQ0I898.png)
 #### [选择](/kgmusic.html)
 
-<div align=right><img src="https://note.youdao.com/yws/api/personal/file/WEB69c60d6bb103f646c40262f8cd4cfacd?method=download&shareKey=f388eda8c2b819be50fc9298fd6a8903&inline=true" width="50%" height="50%"></div>
+<div align=right><img src="https://note.youdao.com/yws/api/personal/file/WEB69c60d6bb103f646c40262f8cd4cfacd?method=download&shareKey=f388eda8c2b819be50fc9298fd6a8903&inline=true" width="45%" height="55%"></div>
