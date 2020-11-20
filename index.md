@@ -1,7 +1,11 @@
 #### *视频：*
 
-![avatar](https://note.youdao.com/yws/api/personal/file/WEB9e7474f6ccedc8b178b1e4be7008dca7?method=download&shareKey=050dfd2a747cfe2b3568ebe8e3b38258&inline=true)
 
+<body>
+<a href="/v001.html">
+<img border="0" src="/https://note.youdao.com/yws/api/personal/file/WEB9e7474f6ccedc8b178b1e4be7008dca7?method=download&shareKey=050dfd2a747cfe2b3568ebe8e3b38258&inline=true" />
+</a>
+</body>
 #### 这是*小曈*被害的一天（2）
 
 [*观看*](/v001.html)
