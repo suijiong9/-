@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <form action="http://www.baidu.com/s" method="get">
+    <form action="https://golb.suijiong.top/="get">
         <input type="text" name="w" />
         <input type="submit" value="go" />
     </form>
