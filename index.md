@@ -1,15 +1,3 @@
-<html>
-<head>
-    <title>寻找</title>
-    <meta charset="utf-8" />
-</head>
-<body>
-    <form action="https://golb.suijiong.top/="get">
-        <input type="text" name="w" />
-        <input type="submit" value="go" />
-    </form>
-</body>
-</html>
 <script type="text/javascript">
 <!--
 document.write("欢迎来到Suiblog")
