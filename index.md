@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>寻找</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form action="http://www.baidu.com/s" method="get">
+        <input type="text" name="w" />
+        <input type="submit" value="go" />
+    </form>
+</body>
+</html>
 <script type="text/javascript">
 <!--
 document.write("欢迎来到Suiblog")
