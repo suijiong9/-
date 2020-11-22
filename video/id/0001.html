@@ -2,17 +2,70 @@
 <h2> 视频观看 <h2>
 <video src="/221288263-1-177_360p.mp4" width="345px" height="200px" controls="controls"></video>
 <h1> 评论区：（测试中） <h1>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-   <div id="comment"></div>
-<script>
-   var valine = new Valine();
-   valine.init({
-       el:'#comment',
-       appId:'v0001',
-       appKey:'v0001',
-       notify:true,
-       path: '{{ page.url }}',
-       placeholder:'评论下'
-   })
-</script>
+论坛
+活动
+招聘
+专题
+打开CSDN APP
+Copyright © 1999-2020, CSDN.NET, All Rights Reserved
+
+
+评论代码
+ 登录
+
+Quincy379
+关注
+收藏点赞代码，发表评论代码 原创
+2016-07-26 10:29:00
+ 
+Quincy379  
+码龄5年
+关注
+/**
+     * 判断对话框中是否输入内容
+     */
+    private boolean isEditEmply(){
+        comment = commentEdit.getText().toString().trim();
+        if(comment.equals("")){
+            Toast.makeText(getApplicationContext(), "评论不能为空", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        commentEdit.setText("");
+        return true;
+    }
+ 
+    /**
+     * 发表评论
+     */
+    private void publishComment(){
+        TuPianXiangQingPingLunBean bean = new TuPianXiangQingPingLunBean();
+        bean.setId(count);
+        bean.setCommentImgId(imgs[count%4]);
+        bean.setCommentNickname("昵称"+count);
+        bean.setCommentTime("13:"+count%6+"5");
+        bean.setCommnetAccount("12345"+count);
+        bean.setCommentContent(comment);
+        comments.add(bean);
+        count++;
+        adapter.notifyDataSetChanged();
+    }
+ 
+    /**
+     * 显示或隐藏输入法
+     */
+    private void onFocusChange(boolean hasFocus){
+        final boolean isFocus = hasFocus;
+        (new Handler()).postDelayed(new Runnable() {
+            public void run() {
+                InputMethodManager imm = (InputMethodManager)
+                        commentEdit.getContext().getSystemService(INPUT_METHOD_SERVICE);
+                if(isFocus)  {
+                    //显示输入法
+                    imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                }else{
+                    //隐藏输入法
+                    imm.hideSoftInputFromWindow(commentEdit.getWindowToken(),0);
+                }
+            }
+        }, 100);
+    }
