@@ -1,23 +1,366 @@
 <a href="/video/id/0001.html"></a>
 <h2> 视频观看 <h2>
 <video src="/221288263-1-177_360p.mp4" width="345px" height="200px" controls="controls"></video>
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-在倒数第一个</div>前添加
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../../../Content/vendor/jquery/jquery-1.11.1.min.js"></script>
+    <script src="../../../Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <link href="../../../Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .pl_Content {
+        position:relative;
+        width:100%;
+        left:50%;
+        margin-left:-50%;
+        margin-top:15px;
+        }
+        .wrap_reply {
+            position:relative;
+            left:50%;
+            margin-left:-400px;
+            width: 800px;
+            height:100%;
+
+            overflow:hidden;
+        }
+
+          .left_reply {
+            width: 120px;
+            height: 120px;
+            float: left;
+        }
+
+          .right_reply {
+            width: 680px;
+            height:120px;
+            float:left;
+        }
+
+           .left_reply img {
+                width: 70px;
+                height: 70px;
+                margin-left: 50px;
+            }
+
+
+            .replay {
+            width: 660px;
+            height: 80px;
+            background-color: #ffffff;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+            .replay textarea {
+                margin-top: 10px;
+                margin-left: 10px;
+                width: 640px;
+                height: 60px;
+                background-color:white; 
+                text-indent:10px;     
+            }
+
+            .replay .replyleft {
+                margin-left: 10px;
+                float: left;
+            }
+
+
+            .replay .replyright {
+                margin-right: 10px;
+                float: right;
+            }
+
  
-<div id="gitalk-container"></div>
-在倒数第一个</div>后添加
- 
-<script type="text/javascript">
-var gitalk = new Gitalk({
-        clientID: 'GitHub Application Client ID',//添加秘钥
-        clientSecret: 'GitHub Application Client Secret',
-        repo: 'gitalk',
-        owner: 'owner',
-        admin: ['owner'],
-        id: 'oneindex',
-        distractionFreeMode: true,
-        createIssueManually: true
-    });
-gitalk.render('gitalk-container');
+            /*、、、、、、、、、、、、评论CSS*/
+        #MsgCon {
+        position:relative;
+        width:800px;
+        left:50%;
+        margin-left:-400px;
+        overflow:hidden;
+        }
+        #MsgCon div.wrap_comment:last-child {
+         border-bottom:none;
+        }
+        .wrap_comment {
+            width: 800px;
+            height:100%;
+            overflow:hidden;
+           border-bottom:solid 1px blue;
+           margin-bottom:20px;
+
+
+        }
+
+     
+
+        .comment_left img {
+                width: 50px;
+                height: 50px;
+                margin-left: 60px;
+                float:left;
+            }
+
+        .comment_right {
+            width: 680px;
+            float: right;
+            /*background-color:green;*/
+       
+        }
+
+        .comreply {
+            color: blue;
+            font-size: larger;
+            margin-left: 20px;
+        }
+
+        .comtime {
+            font-size: small;
+            margin-left: 20px;
+            color: gray;
+            margin-top: 5px;
+        }
+       
+        .comcontent {
+            min-height:24px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .operate {
+            text-align: right;
+            margin-bottom:15px;
+        }
+
+        .commentreplay {
+            border: 1px solid #808080;
+            width: 660px;
+            height: 80px;
+            background-color: #ffffff;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+
+            .commentreplay textarea {
+                margin-top: 10px;
+                margin-left: 10px;
+                width: 640px;
+                height: 40px;
+                background-color: #f8f3f3;
+                text-indent:10px;
+            }
+
+            .commentreplay .replyleft {
+                margin-left: 10px;
+                float: left;
+            }
+
+
+            .commentreplay .replyright {
+                margin-right: 10px;
+                float: right;
+            }
+      
+    </style>
+
+
+    <script>
+        $(function () {
+            var showcomment_letf ="";
+
+            $.ajax({
+                url: "CommentAjax.ashx",    //请求的url地址
+                dataType: "json",   //返回格式为json
+                async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+                data: { "EntityTable": "EIP_HuiBao","EntityID":"27" }, //参数值
+                type: "GET",   //请求方式
+                beforeSend: function () {
+                    //请求前的处理
+                },
+                success: function (req) {
+                    var objects = eval(req);
+
+                    for (var i = 0; i < objects.length; i++) {
+                        alert(objects[i].Content);
+                        showcomment_letf="<div class=\"wrap_comment\">";
+                        showcomment_letf +="<div class=\"comment_left\">";
+                        showcomment_letf +="<img src=\"5 .jpg\" class=\"img-circle\">";
+                        showcomment_letf +="</div>";
+                        showcomment_letf +="<div class=\"comment_right\">";
+                        showcomment_letf +=" <div class=\"comreply\">";
+                        showcomment_letf += " <span><strong>" + objects[i].CreatUserName + "</strong></span>";
+                        showcomment_letf +="  </div>";
+                        showcomment_letf += "  <div class=\"comtime\"> " + objects[i].CreateTime + " </div>";
+                        showcomment_letf += "<div class=\"comcontent\"> " + objects[i].Content + "</div>";
+                        showcomment_letf +=" <div class=\"operate\">";
+                        showcomment_letf +="  <input class=\"btn btn-default btn-xs rese\" οnclick=\"commentreplay(this);\" type=\"button\" value=\"回复\" data-poin=\"21\">";
+                        showcomment_letf +="  </div>";
+                        showcomment_letf +="</div>";
+                        showcomment_letf += "  </div>";
+                        $("#MsgCon").append(showcomment_letf);
+                    }
+                },
+                complete: function () {
+                    //请求完成的处理
+                },
+                error: function () {
+                    //请求出错处理
+                }
+            });
+
+
+         
+        })
+        function commentreplay(obj)
+        {
+            var object = $(obj);
+            var parentobj = object.parent();  //得到上一层对象
+            $(parentobj)
+            var commentreplay_div = null;
+            var commentreplay_div = "<div id=\"commentreplay\" class=\"commentreplay\">";
+            commentreplay_div += " <div class=\"txtreply\">";
+            commentreplay_div += "<textarea id=\"textreply\" placeholder=\"回复张杰：\"></textarea> </div>"
+            commentreplay_div += "<div class=\"replyleft\">";
+            commentreplay_div += " <span class=\"glyphicon glyphicon-user\"></span> User </div> "
+            commentreplay_div += " <div class=\"replyright\"><input class=\"btn btn-default btn-xs\" type=\"button\" value=\"发表\"></div>";
+            commentreplay_div  += "</div>";
+
+            if (obj.value == "回复") {
+                obj.value = "取消";
+                parentobj.append(commentreplay_div);
+                return false;
+            }
+            if (obj.value == "取消") {
+                obj.value = "回复";
+                $("#commentreplay").remove();
+                return false;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="pl_Content">
+    <div class="wrap_reply">
+        <div class="left_reply">
+            <img src="5 .jpg" class="img-circle">
+        </div>
+        <div class="right_reply">
+            <div id="replay" class="replay">
+                <div class="txtreply">
+                    <textarea id="textreply" placeholder="说说你的看法"></textarea>
+                </div>
+                <div class="replyleft">
+                    <span class="glyphicon glyphicon-user"></span> user
+                </div>
+                <div class="replyright">
+                    <input class="btn btn-default btn-xs" type="button" value="发表">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 size=3 style="margin-top:10px;">
+    <div id="MsgCon">
+        <div class="wrap_comment">
+            <div class="comment_left">
+                <img src="5 .jpg" class="img-circle">
+            </div>
+            <div class="comment_right">
+                <div class="comreply">
+                    <span><strong>张杰</strong></span>
+                </div>
+                <div class="comtime">
+                    2015年12月12日
+                </div>
+                <div class="comcontent">
+                    Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+                </div>
+                <div class="operate">
+                    <input type="text" hidden="hidden" value="2">
+                    <input  class="btn btn-default btn-xs rese" οnclick="commentreplay(this);" type="button" value="回复" data-poin="22">
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="wrap_comment">
+            <div class="comment_left">
+                <img src="5 .jpg" class="img-circle">
+            </div>
+            <div class="comment_right">
+                <div class="comreply">
+                    <span><strong>张杰</strong></span>
+                </div>
+                <div class="comtime">
+                    2015年12月12日
+                </div>
+                <div class="comcontent">
+                    Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+                    本教程将向您讲解 Bootstrap 框架的基础，通过学习这些内容，您将可以轻松地创建 Web 项目。教程被分为 Bootstrap 基本结构、Bootstrap CSS、Bootstrap 布局组件和 Bootstrap 插件几个部分。每个部分都包含了与该主题相关的简单有用的实例。
+                </div>
+                <div class="operate">
+                    <input  class="btn btn-default btn-xs rese" οnclick="commentreplay(this);" type="button" value="回复" data-poin="21">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="wrap_comment">
+            <div class="comment_left">
+                <img src="5 .jpg" class="img-circle">
+            </div>
+            <div class="comment_right">
+                <div class="comreply">
+                    <span><strong>张杰</strong></span>
+                </div>
+                <div class="comtime">
+                    2015年12月12日
+                </div>
+                <div class="comcontent">
+                    Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+                    本教程将向您讲解 Bootstrap 框架的基础，通过学习这些内容，您将可以轻松地创建 Web 项目。教程被分为 Bootstrap 基本结构、Bootstrap CSS、Bootstrap 布局组件和 Bootstrap 插件几个部分。每个部分都包含了与该主题相关的简单有用的实例。
+                </div>
+                <div class="operate">
+                    <input class="btn btn-default btn-xs rese" οnclick="commentreplay(this);" type="button" value="回复" data-poin="21">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="wrap_comment">
+            <div class="comment_left">
+                <img src="5 .jpg" class="img-circle">
+            </div>
+            <div class="comment_right">
+                <div class="comreply">
+                    <span><strong>张杰</strong></span>
+                </div>
+                <div class="comtime">
+                    2015年12月12日
+                </div>
+                <div class="comcontent">
+                    Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+                    本教程将向您讲解 Bootstrap 框架的基础，通过学习这些内容，您将可以轻松地创建 Web 项目。教程被分为 Bootstrap 基本结构、Bootstrap CSS、Bootstrap 布局组件和 Bootstrap 插件几个部分。每个部分都包含了与该主题相关的简单有用的实例。
+                </div>
+                <div class="operate">
+                    <input class="btn btn-default btn-xs rese" οnclick="commentreplay(this);" type="button" value="回复" data-poin="21">
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+</body>
+</html>
