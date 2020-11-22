@@ -14,3 +14,5 @@ permalink: /www/sdydq/vision/note.html
  + 沙雕的阅读器
 
  + 2333333333
+ 
+<a href="/sdydq-d.html" target="_blank">下载沙雕阅读器APP！</a>
