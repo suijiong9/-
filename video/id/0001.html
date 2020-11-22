@@ -1,7 +1,24 @@
 <a href="/video/id/0001.html"></a>
 <h2> 视频观看 <h2>
 <video src="/221288263-1-177_360p.mp4" width="345px" height="200px" controls="controls"></video>
-  
+
+ $("button").click(function() {
+        var $textArea = $('#text');
+        textArea = $textArea.val();
+        if (textArea != "") {
+            $("div ul").append("<li style='list-style-type: none;'>" +
+             textArea + "<button style='height:22px'>删除</button></li>");
+            $('#text').val('');
+        } else {
+            alert("评论不能为空！")
+        }
+    })
+  $(function() {
+        $("div ul").on("click", "button", function() {
+
+            $(this).parent().remove();
+        })
+    })
    <div>
         <h3 style="text-align: center;">评论区</h3>
         <textarea id="text"></textarea>
