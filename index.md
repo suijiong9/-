@@ -1,9 +1,3 @@
-<script type="text/javascript">
-<!--
-document.write("欢迎来到Suiblog")
-//-->
-</script>
-
 #### *视频：*
 
 
